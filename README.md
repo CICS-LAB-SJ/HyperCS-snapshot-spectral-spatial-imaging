@@ -1,1 +1,5 @@
-sadasd
+The released code constitutes the core reconstruction framework of our work on ultra-high-compression snapshot hyperspectral imaging via spectral–spatial compressed sensing. In this system, a single frame acquired by the compressive-readout CMOS image sensor (CS-CIS) encodes the three-dimensional spectral datacube through nine spectrally filtered sub-images and a row-wise compressive readout, and the code is used to invert this doubly compressed measurement to recover 230 spectral bands over 505–734 nm at a total compression rate of 0.98%.
+
+Specifically, the reconstruction proceeds in three stages: spatial reconstruction of the compressed frame using a plug-and-play ADMM framework with the pretrained DRUNet denoiser (Code/Spatial_Recovery.py), sub-image alignment by normalized cross-correlation (Code/Align.m), and pixel-wise spectral decoding by non-negative ℓ1-regularized least squares on a Gaussian sparsifying dictionary (Code/Spectral_Recovery.m). Sample measurements are provided in Data/.
+
+We gratefully acknowledge Kwangmoo Koh, Seung-Jean Kim, and Prof. Stephen Boyd (Stanford University) for generously sharing the l1_ls solver (https://web.stanford.edu/~boyd/l1_ls/), and Dr. Kai Zhang for the open-source DRUNet architecture and pretrained weights (https://github.com/cszn/KAIR).
